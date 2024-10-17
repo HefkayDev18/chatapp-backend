@@ -1,0 +1,19 @@
+{
+  "name": "chatapp-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Farouk Lawal",
+  "license": "ISC",
+  "description": "Real time chat application built with Socket.io, Express, Reactjs, Chakra UI and Vite",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "socket.io": "^4.8.0"
+  }
+}
