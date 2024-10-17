@@ -11,7 +11,8 @@ import cors from 'cors';
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  // origin: 'http://localhost:5173', //development
+  origin: 'https://hefkaydev18.github.io/chatapp-frontend/', //Live
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -19,10 +20,12 @@ app.use(cors({
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',
+    // origin: 'http://localhost:5173', //development
+    origin: 'https://hefkaydev18.github.io/chatapp-frontend/', //Live
     methods: ['GET', 'POST']
   }
 });
+const port = process.env.port || 4000;
 
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
@@ -36,6 +39,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(4000, () => {
-  console.log('Server listening on port 4000');
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
